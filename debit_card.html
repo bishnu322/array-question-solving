@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <title>debit card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 508px;
+            height: 335px;
+            background-color: #394B59;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+
+        }
+
+        #borderDesign {
+            display: flex;
+        }
+
+        h1 {
+            margin-top: 100px;
+        }
+
+        #container #p {
+            font-size: 35px;
+            color: #fff;
+            font-family: "Sofia", sans-serif;
+            margin: 35px 45px;
+            z-index: 2;
+
+        }
+
+        #circle {
+            width: 505px;
+            height: 505px;
+            border-radius: 250px;
+            background-color: #4B5D6B;
+            position: absolute;
+            left: 2px;
+            top: 20px;
+            /* z-index: 1; */
+        }
+
+        img {
+            z-index: 2;
+            width: 70px;
+            position: absolute;
+            left: 60px;
+            top: 115px;
+
+        }
+
+        #border {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #fff;
+            border-radius: 150px;
+            z-index: 2;
+            position: relative;
+            bottom: 140px;
+            left: 100px;
+            overflow: hidden;
+        }
+
+        #downDesign #cardNum {
+            position: absolute;
+            top: 210px;
+            left: 30px;
+            display: flex;
+            color: #fff;
+        }
+
+        #downDesign #cardNum>div {
+            font-size: 22px;
+            margin: 8px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #cardDetail {
+            position: absolute;
+            top: 250px;
+            left: 40px;
+            z-index: 3;
+            color: #fff;
+        }
+
+        #cardDetail p {
+            font-size: 10px;
+        }
+
+        #cardDetail>div {
+            font-size: 18px;
+        }
+
+        #cardDetail #name {
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        #masterCard img {
+            z-index: 3;
+            position: absolute;
+            top: 68%;
+            left: 77%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Debit Card</h1>
+    <div id="container">
+        <div id="borderDesign" style="z-index: 3;">
+            <div id="p">world</div>
+            <img src="./Assets/sim-card.png" alt="sim-card">
+            <div id="circle"></div>
+            <div id="border"></div>
+        </div>
+
+        <div id="downDesign">
+            <div id="cardNum" style="z-index: 4;">
+                <div>5412</div>
+                <div>7512</div>
+                <div>3412</div>
+                <div>3456</div>
+            </div>
+            <div style="display: flex;">
+                <div id="cardDetail">
+                    <p>Validity</p>
+                    <div>12/23</div>
+                    <div id="name">All About Coding</div>
+                </div>
+                <div id="masterCard">
+                    <img src="./Assets/visa.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

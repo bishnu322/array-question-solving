@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>array_merge</title>
+</head>
+<body>
+    <h1>Array_Merginig</h1>
+</body>
+<script>
+
+let data1 = [10, 20, 30, 40];
+let data2 = [50, 60, 70, 80, 90];
+let mergedData = [];
+
+for(let i = 0; i < data1.length; i++){
+
+    // console.log(data1[i])
+    mergedData.push(data1[i])
+}
+
+for (let i = 0; i < data2.length; i++){
+    // console.log(data2[i])
+    mergedData.push(data2[i])
+}
+console.log(mergedData)
+
+
+// We can use spread operator to write short code 
+/*
+    mergedData = [...data1, ...data2]
+    console.log(mergedData)
+*/
+    
+</script>
+</html>

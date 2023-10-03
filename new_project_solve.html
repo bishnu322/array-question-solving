@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>new work</title>
+    <style>
+        #dataBox>div {
+            margin: 15px;
+        }
+
+        #dataBox input {
+            width: 390px;
+            display: block;
+            padding: 8px;
+            font-size: 17px;
+
+        }
+
+        #red input {
+            border: 2px solid red;
+            color: red;
+        }
+
+        #green input {
+            border: 2px solid green;
+            color: green;
+        }
+
+        #blue input {
+            border: 2px solid blue;
+            color: blue;
+        }
+
+        #SubmitBtn {
+            padding: 10px;
+            width: 410px;
+            font-weight: 600;
+            border: 2px solid #000;
+            cursor: pointer;
+    
+        }
+        #SubmitBtn:hover{
+            background-color: #a12;
+            color: #fff;
+        }
+
+        #outputData>span {
+            display: inline-block;
+            width: 50px;
+            background-color: red;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            margin: 10px;
+        }
+
+        #greenoutputData>span {
+            display: inline-block;
+            width: 50px;
+            background-color: green;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            margin: 10px;
+        }
+        #btnsetup{
+            display: none;
+        }
+        #btnsetup>button{
+            position: relative;
+            left: 37%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h4>New_Project</h4>
+    <div id="dataBox">
+
+        <div id="red">
+            <label for="redBox">Red : </label>
+            <input type="number" id="redBox">
+        </div>
+
+        <div id="green">
+            <label for="redBox">Green : </label>
+            <input type="number" name="" id="greenBox">
+        </div>
+            <!-- <div id="blue">
+                <label for="redBox">Blue : </label>
+                <input type="number" name="" id="blueBox">
+            </div> -->
+
+
+        <!-- <div id="noOfCircle">
+            <label for="redBox">Number of Circle : </label>
+            <input type="number" id="Circle">
+        </div> -->
+
+
+        <div>
+            <button onclick="colorControl()" id="SubmitBtn">Submit</button>
+        </div>
+    </div>
+
+    <div id="outputData">
+
+    </div>
+    <div id="greenoutputData">
+
+    </div>
+    <!-- <div id="blueoutputData">
+
+    </div> -->
+  <div id="btnsetup">
+    
+        <button id="startbtn">Start</button>
+    
+        <button id="Restbtn">Reset</button>
+  
+  </div>
+   
+</body>
+
+<script>
+    let red = document.getElementById("redBox");
+    let green = document.getElementById("greenBox");
+    // let blue = document.getElementById("blueBox");
+    // let circle = document.getElementById("Circle");
+    let outputData = document.getElementById("outputData");
+    let greenoutputData = document.getElementById("greenoutputData");
+    let SubmitBtn = document.getElementById("SubmitBtn");
+    // let blueoutputData = document.getElementById("blueoutputData")
+    let btnsetup = document.getElementById("btnsetup");
+   
+
+    let newNum = 0;
+    let greenNum = 0;
+
+    function colorControl() {
+        redColHandler()
+
+        btnsetup.style.display = "block";
+
+    }
+
+    function redColHandler() {
+
+        var redElNum = red.value;
+
+        let redInterval = setInterval(() => {
+
+            if (newNum < redElNum) {
+                newNum = newNum + 1;
+                console.log(newNum)
+                outputData.insertAdjacentHTML("beforeend", `<span>${newNum}</span>`);
+
+            } else {
+                clearInterval(redInterval)
+                greenNum = greenNum + 1;
+                console.log(greenNum)
+                greenoutputData.insertAdjacentHTML("beforeend", `<span>${greenNum}</span>`);
+                greenColHandler()
+            }
+
+        }, 1000);
+    }
+
+    function greenColHandler() {
+
+        var greenElNum = green.value;
+
+        let greenInterval = setInterval(() => {
+            if (greenNum < greenElNum) {
+                greenNum = greenNum + 1;
+                console.log(greenNum)
+                greenoutputData.insertAdjacentHTML("beforeend", `<span>${greenNum}</span>`);
+            } else {
+                clearInterval(greenInterval)
+            }
+
+        }, 1000)
+    }
+
+</script>
+
+</html>

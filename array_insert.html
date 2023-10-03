@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array insertion</title>
+</head>
+<style>
+    input {
+        padding: 5px;
+        width: 300px;
+    }
+</style>
+
+<body>
+    <div>
+        <p>Enter value</p>
+        <input type="text" placeholder="Enter new element" id="inputValue">
+        <p>Enter Position</p>
+        <input type="text" placeholder="Enter position " id="inputpostion">
+        <br>
+        <br>
+        <button onClick="handleInsertionPositionWise()">click me</button>
+    </div>
+</body>
+<script>
+    let data = [9, 10, 24, 55, 33, 88, 22, 99, 882, 8778, 552, 66, 34, 88]
+    let inputValue = document.getElementById("inputValue");
+    let inputPosition = document.getElementById("inputpostion");
+
+    function handleInsertionPositionWise() {
+        let newVal = inputValue.value;
+        let newPos = inputPosition.value;
+;
+        for (let i = data.length - 1; i >= 0; i--){
+             if(i >= newPos)
+             {
+                data[i + 1] = data[i]
+                if(i == newPos)
+                {
+                    data[i] = newVal;
+                }
+                    
+             }
+        }
+        console.log(data)
+        console.log("clicked........")
+    }
+
+    /*
+    It can be done by using function splice
+    data.splice(2,0,10000)
+    1st place is index, 2nd is do u want to delete elements and 3rd place is element which we insert
+    */
+    
+</script>
+
+</html>

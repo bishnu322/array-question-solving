@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>search Element</title>
+</head>
+
+<body>
+
+    <p>Array Element search</p>
+    <input type="text" name="" id="search">
+    <button onclick="handler()">Search</button>
+</body>
+
+<script>
+    let data = ["bishnu", "sanjay", "arbind", 10, 12, 15, 18, 20, 30]
+    let newData1 = document.getElementById("search")
+    
+    let newData;
+    let index = undefined;
+
+
+    function handler() {
+
+        let newEl = newData1.value;
+
+        for (let i = 0; i < data.length; i++) {
+
+            if (data[i] == newEl) {
+                newData = data[i];
+                index = i
+                       
+            }
+            
+        }
+        console.log(newData)
+        if(newData == undefined){
+            console.log("Searched element cannot be found...")
+        }
+        
+    }
+</script>
+
+</html>

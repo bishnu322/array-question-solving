@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+
+<body>
+    <div>
+
+            <label for="element">Enter element : </label>
+            <input type="text" name="element" id="element">
+            <button id="delete">Delete</button>
+            <button onclick="handleElement()" id="submit">Submit</button>
+
+            <div id="allData">
+
+            </div>
+            <div id="newdata">
+                <br>
+            </div>
+       
+    </div>
+</body>
+
+<script>
+        let inputEl = document.getElementById("element");
+        let deleteEl = document.getElementById("delete");
+        let allData = document.getElementById("allData");
+        let newData = document.getElementById("newdata");
+        
+        let data = [];
+
+        function handleElement()
+        {
+            let newEl = inputEl.value;
+            data.push(newEl)
+            console.log(data)
+            allData.innerHTML = data;
+            // newData.insertAdjacentHTML("beforebegin", `<div>${data}</div><br>`)
+
+        }
+</script>
+</html>

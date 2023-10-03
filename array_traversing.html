@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Traversing</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h3{
+            background-color: antiquewhite;
+            padding: 5px;
+            margin: 2px;
+            border: 1px solid rgb(239, 5, 5);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="element">
+    <button id="button" onclick="handleValue()">Click me</button>
+</body>
+<script>
+    let data = [9,10,24,55,33,88,22,99,882,8778,552,66,34,88];
+
+    // data.forEach((data, i) =>{
+    //     document.write(`<h3>
+    //         Array ${i} is ${data} <br>
+    //         </h3>`)
+    // })  
+
+    let element = document.getElementById("element");
+    let button = document.getElementById("button");
+    let newData = [];
+    function handleValue(){
+  
+        let i = element.value;
+        if(i < data.length)
+        {
+            document.write(`<h3 style="border: 1px solid red; background-color: antiquewhite;padding: 5px;">${data[i]}</h3>`)
+        }
+        else{
+            alert("please! Enter value less than Array length")
+        }
+    }
+
+</script>
+</html>
